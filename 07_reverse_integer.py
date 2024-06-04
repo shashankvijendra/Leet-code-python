@@ -21,12 +21,13 @@ class Solution:
     def reverse(self, x: int) -> int:
         if not x:
             return 0
-        print(x, (-2**32)-1 < x)
-        if (-2**32)-1 > x > (2**32):
-            return 0        
         if '-' in str(x):
-            return int(str(x).replace('-','').strip('0')[::-1])*-1
-        return int(str(x).strip('0')[::-1])
+            res = int(str(x).replace('-','').strip('0')[::-1])*-1
+        else:
+            res = int(str(x).strip('0')[::-1])
+        if (-2**31) > res or res > (2**31)-1:
+            return 0               
+        return res
 
 s = Solution()
-print(s.reverse(123))
+print(s.reverse(1534236469))

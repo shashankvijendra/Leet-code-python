@@ -12,14 +12,33 @@ from typing import List
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        data = set(nums)
-        res = set()
-        for i in range(len(nums)):
-            for j in nums[i+1:]:
-                if i+j in data:
-                    res.add((nums[i], j, i+j))    
-        
-        return set(res)
+        res = []
+        nums.sort()
+
+        for i, a in enumerate(nums):
+            if a > 0:
+                break
+
+            if i > 0 and a == nums[i - 1]:
+                continue
+
+            l, r = i + 1, len(nums) - 1
+            while l < r:
+                threeSum = a + nums[l] + nums[r]
+                if threeSum > 0:
+                    r -= 1
+                elif threeSum < 0:
+                    l += 1
+                else:
+                    res.append([a, nums[l], nums[r]])
+                    l += 1
+                    r -= 1
+                    while nums[l] == nums[l - 1] and l < r:
+                        l += 1
+                        
+        return res
+
 
 nums = [-1,0,1,2,-1,-4]
+[-4,-1,-1,0,1,2]
 print(Solution().threeSum(nums))

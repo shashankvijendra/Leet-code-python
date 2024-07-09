@@ -1,3 +1,12 @@
+"""Longest Consecutive Sequence
+Solved 
+Given an array of integers nums, return the length of the longest consecutive sequence of elements.
+
+A consecutive sequence is a sequence of elements in which each element is exactly 1 greater than the previous element.
+
+You must write an algorithm that runs in O(n) time."""
+
+
 from typing import List
 
 

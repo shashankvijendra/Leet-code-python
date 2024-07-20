@@ -22,3 +22,8 @@ class Solution:
             
         return res
 
+# Input: height = [1,7,2,5,4,7,3,6]
+# Output: 36
+
+# Input: height = [2,2,2]
+# Output: 4

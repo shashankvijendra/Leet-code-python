@@ -10,7 +10,7 @@ The solutions presented here cover a broad spectrum of difficulty levels, rangin
 
 The repository is organized into directories, each dedicated to a specific problem. The naming convention follows the problem number format for ease of navigation. Within each directory, you'll find:
 
-- A Python script (`solution.py`) containing the solution code.
+- A Python scripts containing the solution code.
 - A markdown file (`README.md`) providing a brief description of the problem, the approach taken, and any additional notes or references.
 
 ## Goals

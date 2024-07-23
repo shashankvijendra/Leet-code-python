@@ -7,10 +7,29 @@ An anagram is a string that contains the exact same characters as another string
 from typing import List
 
 class Solution:
+    """
+    Groups anagrams together from a list of strings.
+
+    Given an array of strings, this method groups all anagrams together into sublists. An anagram is
+    defined as a string that contains the exact same characters as another string, but the order of
+    characters can be different. The method returns the output in any order.
+
+    Parameters:
+    - strs (List[str]): A list of strings to group by anagrams.
+
+    Returns:
+    - List[List[str]]: A list of lists containing grouped anagrams.
+
+    Time Complexity:
+    - O(NK): N is the number of strings in the input list, and K is the maximum length of a string.
+      This accounts for iterating over each character in each string during the sorting and comparison steps.
+
+    Space Complexity:
+    - O(NK): Similar to the time complexity, this accounts for storing the sorted versions of strings
+      and grouping them together. In the worst case, every string could be unique, requiring storage
+      proportional to the total number of characters across all strings.
+    """    
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        res = []
-        if len(strs)==1:
-            return [strs]
         def is_anagrams(s, t):
             if len(s)!=len(t):
                 return False

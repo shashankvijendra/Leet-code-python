@@ -1,4 +1,17 @@
 class Solution:
+    """
+    Checks if two strings are anagrams of each other.
+
+    Two strings are considered anagrams if they contain the same characters in the same quantities,
+    regardless of their order. This method compares two input strings and determines if they are anagrams.
+
+    Parameters:
+    - s (str): The first string to compare.
+    - t (str): The second string to compare.
+
+    Returns:
+    - bool: True if the two strings are anagrams of each other, otherwise False.
+    """    
     def isAnagram(self, s: str, t: str) -> bool:
 
         if len(s)!=len(t):

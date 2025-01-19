@@ -112,11 +112,28 @@ class Solution:
             res = int(new_s or 0)
         except ValueError:
             return 0
-        if res > 2**31-1:
-            return 2**31-1
-        if res < -2**31:
-            return -2**31
-        return res
+        return 2**31-1 if res > 2**31-1 else max(res, -2**31)
+
 
 s = Solution()
 print(s.myAtoi('0-1'))
+
+
+# Methode 2
+def string_to_int(s: str) -> int:
+    """
+    Converts a string to an integer by removing non-digit characters.
+
+    Args:
+        s (str): The input string to convert.
+
+    Returns:
+        int: The converted integer, or an error message if the conversion fails.
+    """
+    s = ''.join(filter(str.isdigit, s))  # Remove non-digit characters
+    if not s:
+        return "Error: No digits found in input string"
+    try:
+        return int(s)
+    except ValueError:
+        return "Error: Invalid input string"

@@ -2,11 +2,8 @@
 
 ### 1. Longest Substring Without Repeating Characters
 
-**Question:**
-Given a string `s`, find the length of the longest substring without repeating characters.
+# Given a string `s`, find the length of the longest substring without repeating characters.
 
-**Solution:**
-```python
 def length_of_longest_substring(s):
     char_map = {}
     left = 0
@@ -23,15 +20,13 @@ def length_of_longest_substring(s):
 # Test the function
 s = "abcabcbb"
 print(length_of_longest_substring(s))  # Output: 3 (substring "abc")
-```
+
 
 ### 2. Find the Duplicate Number
 
-**Question:**
-Given an array of integers `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive, return the duplicate number.
 
-**Solution:**
-```python
+#Given an array of integers `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive, return the duplicate number.
+
 def find_duplicate(nums):
     slow = nums[0]
     fast = nums[0]
@@ -52,15 +47,13 @@ def find_duplicate(nums):
 # Test the function
 nums = [1, 3, 4, 2, 2]
 print(find_duplicate(nums))  # Output: 2
-```
+
 
 ### 3. Coin Change
 
-**Question:**
-You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`.
 
-**Solution:**
-```python
+# You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`.
+
 def coin_change(coins, amount):
     dp = [float('inf')] * (amount + 1)
     dp[0] = 0
@@ -75,15 +68,11 @@ def coin_change(coins, amount):
 coins = [1, 2, 5]
 amount = 11
 print(coin_change(coins, amount))  # Output: 3 (11 = 5 + 5 + 1)
-```
+
 
 ### 4. Group Anagrams
+# Given an array of strings `strs`, group the anagrams together. You can return the answer in any order.
 
-**Question:**
-Given an array of strings `strs`, group the anagrams together. You can return the answer in any order.
-
-**Solution:**
-```python
 def group_anagrams(strs):
     anagrams = {}
     
@@ -99,15 +88,13 @@ def group_anagrams(strs):
 strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 print(group_anagrams(strs))  
 # Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
-```
+
 
 ### 5. Kth Largest Element in an Array
 
-**Question:**
-Find the `k`-th largest element in an unsorted array. Note that it is the `k`-th largest element in sorted order, not the `k`-th distinct element.
 
-**Solution:**
-```python
+# Find the `k`-th largest element in an unsorted array. Note that it is the `k`-th largest element in sorted order, not the `k`-th distinct element.
+
 import heapq
 
 def find_kth_largest(nums, k):
@@ -117,16 +104,13 @@ def find_kth_largest(nums, k):
 nums = [3, 2, 1, 5, 6, 4]
 k = 2
 print(find_kth_largest(nums, k))  # Output: 5
-```
+
 
 
 ### 6. Merge Intervals
 
-**Question:**
-Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+# Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
-**Solution:**
-```python
 def merge_intervals(intervals):
     intervals.sort(key=lambda x: x[0])
     merged = []
@@ -142,15 +126,12 @@ def merge_intervals(intervals):
 # Test the function
 intervals = [[1,3],[2,6],[8,10],[15,18]]
 print(merge_intervals(intervals))  # Output: [[1,6],[8,10],[15,18]]
-```
+
 
 ### 7. Product of Array Except Self
 
-**Question:**
-Given an array `nums` of `n` integers where `n > 1`, return an array `output` such that `output[i]` is equal to the product of all the elements of `nums` except `nums[i]`.
+# Given an array `nums` of `n` integers where `n > 1`, return an array `output` such that `output[i]` is equal to the product of all the elements of `nums` except `nums[i]`.
 
-**Solution:**
-```python
 def product_except_self(nums):
     length = len(nums)
     output = [1] * length
@@ -170,15 +151,12 @@ def product_except_self(nums):
 # Test the function
 nums = [1, 2, 3, 4]
 print(product_except_self(nums))  # Output: [24, 12, 8, 6]
-```
+
 
 ### 8. Binary Tree Level Order Traversal
 
-**Question:**
-Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+# Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
 
-**Solution:**
-```python
 from collections import deque
 
 class TreeNode:
@@ -211,15 +189,9 @@ root = TreeNode(3)
 root.left = TreeNode(9)
 root.right = TreeNode(20, TreeNode(15), TreeNode(7))
 print(level_order(root))  # Output: [[3], [9, 20], [15, 7]]
-```
 
 ### 9. Combination Sum
-
-**Question:**
-Given an array of distinct integers `candidates` and a target integer `target`, return a list of all unique combinations of `candidates` where the chosen numbers sum to `target`. You may return the combinations in any order.
-
-**Solution:**
-```python
+# Given an array of distinct integers `candidates` and a target integer `target`, return a list of all unique combinations of `candidates` where the chosen numbers sum to `target`. You may return the combinations in any order.
 def combination_sum(candidates, target):
     def backtrack(start, target, path):
         if target == 0:
@@ -238,15 +210,10 @@ def combination_sum(candidates, target):
 candidates = [2, 3, 6, 7]
 target = 7
 print(combination_sum(candidates, target))  # Output: [[2, 2, 3], [7]]
-```
 
 ### 10. Subarray Sum Equals K
 
-**Question:**
-Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.
-
-**Solution:**
-```python
+# Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.
 def subarray_sum(nums, k):
     count, cum_sum = 0, 0
     sum_map = {0: 1}
@@ -263,16 +230,12 @@ def subarray_sum(nums, k):
 nums = [1, 1, 1]
 k = 2
 print(subarray_sum(nums, k))  # Output: 2
-```
 
 
 ### 11. Rotate Image
 
-**Question:**
-You are given an `n x n` 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
+# You are given an `n x n` 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
 
-**Solution:**
-```python
 def rotate(matrix):
     n = len(matrix)
     for i in range(n):
@@ -295,15 +258,9 @@ print(matrix)
 #     [8, 5, 2],
 #     [9, 6, 3]
 # ]
-```
 
 ### 12. Word Break
-
-**Question:**
-Given a string `s` and a dictionary of words `word_dict`, return true if `s` can be segmented into a space-separated sequence of one or more dictionary words.
-
-**Solution:**
-```python
+# Given a string `s` and a dictionary of words `word_dict`, return true if `s` can be segmented into a space-separated sequence of one or more dictionary words.
 def word_break(s, word_dict):
     dp = [False] * (len(s) + 1)
     dp[0] = True
@@ -320,15 +277,10 @@ def word_break(s, word_dict):
 s = "leetcode"
 word_dict = {"leet", "code"}
 print(word_break(s, word_dict))  # Output: True
-```
 
 ### 13. Palindrome Partitioning
+# Given a string `s`, partition `s` such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of `s`.
 
-**Question:**
-Given a string `s`, partition `s` such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of `s`.
-
-**Solution:**
-```python
 def palindrome_partitioning(s):
     def is_palindrome(sub):
         return sub == sub[::-1]
@@ -350,15 +302,11 @@ def palindrome_partitioning(s):
 s = "aab"
 print(palindrome_partitioning(s))
 # Output: [["a", "a", "b"], ["aa", "b"]]
-```
 
 ### 14. Maximum Subarray
 
-**Question:**
-Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+# Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
-**Solution:**
-```python
 def max_subarray(nums):
     max_sum = nums[0]
     current_sum = nums[0]
@@ -372,15 +320,10 @@ def max_subarray(nums):
 # Test the function
 nums = [-2,1,-3,4,-1,2,1,-5,4]
 print(max_subarray(nums))  # Output: 6 (subarray [4,-1,2,1])
-```
 
 ### 15. Find Peak Element
+# A peak element is an element that is strictly greater than its neighbors. Given an integer array `nums`, find a peak element, and return its index. You may imagine that `nums[-1]` and `nums[n]` are both `-∞`.
 
-**Question:**
-A peak element is an element that is strictly greater than its neighbors. Given an integer array `nums`, find a peak element, and return its index. You may imagine that `nums[-1]` and `nums[n]` are both `-∞`.
-
-**Solution:**
-```python
 def find_peak_element(nums):
     left, right = 0, len(nums) - 1
     
@@ -396,4 +339,4 @@ def find_peak_element(nums):
 # Test the function
 nums = [1,2,3,1]
 print(find_peak_element(nums))  # Output: 2 (element 3)
-```
+

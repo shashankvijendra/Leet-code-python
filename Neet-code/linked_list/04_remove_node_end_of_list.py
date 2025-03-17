@@ -10,16 +10,16 @@ class ListNode:
         self.val = val
         self.next = next
 
-class Solution:
+class Solutions:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        
+        pass
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
 
-class Solution:
+class Solutionss:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         
         data = head
@@ -55,11 +55,10 @@ class Solution:
         while right:
             left = left.next
             right = right.next
-
         left.next = left.next.next
         return dummy.next
 
 
 head = ListNode(1)
 
-Solution().removeNthFromEnd(head=head, n=1)
+print(Solution().removeNthFromEnd(head=head, n=1))

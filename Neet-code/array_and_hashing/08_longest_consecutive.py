@@ -18,15 +18,15 @@ class Solution:
         for i in nums:
             if i-1 in data:
                 continue
-            else:
-                l = i+1
-                longest = 1
-                temp[i] = [i]
-                while l in data:
-                    temp.setdefault(i, []).append(l)
-                    l+=1
-                    longest+=1
-                lenght = max(lenght, longest)
+            l = i+1
+            longest = 1
+            temp[i] = [i]
+            while l in data:
+                temp.setdefault(i, []).append(l)
+                l+=1
+                longest+=1
+            lenght = max(lenght, longest)
+        print(temp)
         return lenght
     
     
@@ -36,5 +36,6 @@ class Solution:
 
 # Input: nums = [0,3,2,5,4,6,1,1]
 # Output: 7
-    
+
+Solution().longestConsecutive([0,3,2,5,4,6,1,1])
     

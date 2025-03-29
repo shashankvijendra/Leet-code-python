@@ -32,6 +32,25 @@ class Solution:
             return res
 
         return [temp//i for i in nums]
+    
+def productExceptSelf(nums: list[int]) -> list[int]:
+    n = len(nums)
+    output = [1] * n
+
+    # Step 1: Prefix product
+    prefix = 1
+    for i in range(n):
+        output[i] = prefix
+        prefix *= nums[i]
+
+    # Step 2: Postfix product (from right to left)
+    postfix = 1
+    for i in range(n - 1, -1, -1):
+        output[i] *= postfix
+        postfix *= nums[i]
+
+    return output
+    
 
 # Input: nums = [1,2,4,6]
 # Output: [48,24,12,8]

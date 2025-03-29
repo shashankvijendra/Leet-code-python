@@ -37,13 +37,12 @@ class Solution:
         
         for right in range(n):
             if s[right] not in charSet:
-                charSet.add(s[right])
                 maxLength = max(maxLength, right - left + 1)
             else:
                 while s[right] in charSet:
                     charSet.remove(s[left])
                     left += 1
-                charSet.add(s[right])
+            charSet.add(s[right])
         print(maxLength)
         return maxLength
             

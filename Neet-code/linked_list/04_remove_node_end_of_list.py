@@ -59,6 +59,17 @@ class Solution:
         return dummy.next
 
 
+dumy = ListNode(0)
 head = ListNode(1)
-
+dumy = ListNode(0, head)
+head.next = ListNode(2)
+head = head.next
+head.next = ListNode(3)
+head = head.next
+head.next = ListNode(4)
+head = head.next
+print(head)
 print(Solution().removeNthFromEnd(head=head, n=1))
+
+# Input: head = [1,2,3,4], n = 2
+# Output: [1,2,4]

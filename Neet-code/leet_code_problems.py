@@ -340,3 +340,39 @@ def find_peak_element(nums):
 nums = [1,2,3,1]
 print(find_peak_element(nums))  # Output: 2 (element 3)
 
+
+
+# Question: Find Unique Pairs with a Minimum Difference
+# Given an array of integers, find all unique pairs (a, b) where:
+
+# a appears before b in the original list.
+
+# The absolute difference between a and b is greater than or equal to a given target value.
+
+# Duplicate values in the list are allowed, meaning the same number can be paired multiple times if it appears more than once in the list.
+
+
+def find_valid_pairs(arr, target):
+    arr.sort()  # Sort the array (preserves duplicates)
+    valid_pairs = []
+
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if abs(arr[j] - arr[i]) >= target:
+                valid_pairs.append((arr[i], arr[j]))
+
+    return valid_pairs
+
+# Example Usage
+arr = [1, 5, 3, 9, 7, 2, 8, 6, 5, 3]
+target = 3
+print(find_valid_pairs(arr))
+#Output
+# [(1, 5), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), 
+#  (2, 5), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9),
+#  (3, 6), (3, 7), (3, 8), (3, 9), (3, 6), (3, 7), (3, 8), (3, 9), 
+#  (5, 9), (5, 8), (5, 7), (5, 6), (5, 9), (5, 8), (5, 7), (5, 6),
+#  (6, 9), (6, 8), (6, 7), (7, 9)]
+
+
+
